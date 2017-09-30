@@ -37,12 +37,12 @@ line: T_NEWLINE
     | expr T_NEWLINE { mpq_out_str(stdout, 10, $1); printf("\n"); }
 ;
 
-expr: T_RATIOw              { mpq_set($$, $1); }
+expr: T_RATIO               { mpq_set($$, $1); }
     | expr T_PLUS expr      { mpq_add($$, $1, $3); }
     | expr T_MINUS expr     { mpq_sub($$, $1, $3); }
     | expr T_MULTIPLY expr  { mpq_mul($$, $1, $3); }
     | expr T_DIVIDE expr    { mpq_div($$, $1, $3); }
-    | T_LEFT expr T_RIGHT   { mpq_set($$, $2); }
+    | T_LEFT expr T_RIGHT   { mpq_init($$); mpq_set($$, $2); }
 ;
 
 %%
