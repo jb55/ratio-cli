@@ -3,7 +3,6 @@
 %{
 #include <stdio.h>
 #include <gmp.h>
-#include "ratio.h"
 
 #define YY_DECL int yylex()
 
