@@ -15,6 +15,6 @@ stdenv.mkDerivation rec {
     description = "ratio calculator";
     homepage = "https://github.com/jb55/ratio";
     maintainers = with maintainers; [ jb55 ];
-    license = licenses.mit;
+    license = licenses.gpl3Only;
   };
 }
