@@ -1,7 +1,7 @@
-{ stdenv, gmp, bison, flex }:
+{ stdenv, gmp, bison, lib, flex }:
 
 stdenv.mkDerivation rec {
-  name = "ratio-${version}";
+  pname = "ratio";
   version = "0.1";
 
   src = ./.;
@@ -11,9 +11,9 @@ stdenv.mkDerivation rec {
   nativeBuildInputs = [ bison flex ];
   buildInputs = [ gmp ];
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "ratio calculator";
-    homepage = "https://github.com/jb55/ratio";
+    homepage = "http://git.jb55.com/ratio";
     maintainers = with maintainers; [ jb55 ];
     license = licenses.gpl3Only;
   };
